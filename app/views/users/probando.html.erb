@@ -1,0 +1,15 @@
+<h1>PROBANDO</h1>
+
+<% if logged_in? %>
+    <h2><%=current_user.username %></h2>
+    <h2><%=current_user.rol %></h2>
+    <h1> ESTO SOLO APARECE SI EL USUARIO ESTA LOGEADO</h1>
+
+    <% if current_user.rol == "admin" %>
+    <h1> Puedes crear usuarios</h1>
+    <%= button_to "NewUser", signup_path, method: :get %>
+    <% end %>
+
+    <%= button_to "Logout", logout_path, method: :delete %>
+<% end %>
+
