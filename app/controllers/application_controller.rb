@@ -1,20 +1,12 @@
 class ApplicationController < ActionController::Base
+	private
 
-
-    helper_method :current_user, :logged_in?
-    def current_user
-      @current_user ||= User.find(session[:user_id]) if session[:user_id]
-    end
-     
-    def logged_in?
-      !!current_user
-    end
-     
-    def require_user
-      if !logged_in?
-        flash[:alert] = "You must be logged in to perform that action."
-        redirect_to login_path
-      end
-    end
-
+  # Finds the User with the ID stored in the session with the key
+  # :current_user_id This is a common way to handle user login in
+  # a Rails application; logging in sets the session value and
+  # logging out removes it.
+  def current_user
+    @_current_user ||= session[:current_user_id] &&
+      User.find_by(id: session[:current_user_id])
+  end
 end
