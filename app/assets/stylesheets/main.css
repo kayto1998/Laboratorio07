@@ -1994,8 +1994,6 @@ input, select, textarea {
 				font-size: 1em;
 			}
 
-/* Icons */
-
 	.icon {
 		text-decoration: none;
 		text-decoration: none;
@@ -2030,7 +2028,6 @@ input, select, textarea {
 			font-family: 'Font Awesome 5 Brands';
 		}
 
-/* Header */
 
 	#header {
 		display: -moz-flex;
@@ -2053,7 +2050,7 @@ input, select, textarea {
 		overflow-y: auto;
 		position: absolute;
 		text-align: right;
-		top: auto;
+		top: 9%;
 		width: 375px;
 	}
 
@@ -2204,7 +2201,12 @@ input, select, textarea {
 /* Main */
 
 	#main {
-		margin-left: 375px;
+
+		position: absolute;
+		top: 9%;
+		height: 91%;
+		width: 77.798%;
+
 	}
 
 		#main > section {
